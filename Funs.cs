@@ -1,4 +1,4 @@
-/// <summary>
+﻿/// <summary>
 /// 删除文件夹
 /// </summary>
 private void DeleteFolder()
@@ -168,3 +168,11 @@ private IList<APPDATAPROFILE> GetAppDataProfileModel(decimal userId = 0)
     var list = query.ToList();
     return list;
 }
+
+        /// 生成流
+public static Stream ToStream(this XmlDocument xdoc)
+        {
+            var memoryStream = new MemoryStream();
+            xdoc.Save(memoryStream);
+            return memoryStream;
+        }
